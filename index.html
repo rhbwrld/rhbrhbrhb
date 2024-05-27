@@ -1,98 +1,67 @@
 <!DOCTYPE html>
-<html lang="ru">
-    <head>
-        <meta charset="UTF-8">
-        <title>Дизайнер Чумаков С.С.</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-       <link rel="stylesheet" href="styles/main.css">
-    </head>
-    <body>
-        <header class="header">
-            <div class="container">
-                <div class="container-align">
-                    <nav class="main-menu">
-                    <a href="#about">Обо мне</a>
-                    <a href="#skills">Навыки</a>
-                   </nav>
-                   <a href="authorization.html">Авторизация</a>
-                </div>  
-            <div class="text-center py-5">
-            <h1 class="name">Чумаков Сергей Сергеевич</h1>
-            <h2>Дизайнер</h2>
-            <p class="w-50 my-3 mx-auto">
-                Занимаюсь разработкой дизайна интерфейсов, фирменного стиля, полиграфии и веб-сайтов. В работе стараюсь ориентироваться на задачи бизнеса и потребности пользователей.
-            </p>
-            <a class="btn contact-me-btn" href="mailto:sergeyrehabov@gmail.com">Написать мне</a>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Random Backgrounds and Text</title>
+<style>
+  body {
+    margin: 0;
+    background-size: cover;
+    background-position: center;
+    font-family: Arial, sans-serif;
+  }
+  .container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+  }
+</style>
+</head>
+<body>
 
-        </div>
-        </div>
-        
-        </header>
+<div id="background-image"></div>
+<div class="container">
+  <h1 id="random-text"></h1>
+</div>
 
-        <main>
-            <div class="container">
-                <section id="about">
-                    <h1>Обо мне</h1>
+<script>
+// Функция для получения случайного числа
+function getRandomIntInclusive(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random()  \*  (max - min + 1)) + min; // Тело функции
+}
 
-                    <figure class="avatar">
-                        <img src="https://t3.ftcdn.net/jpg/02/04/27/24/360_F_204272457_l8ox4EymilYzQ3AvNTbEL29LpRFm0UOc.jpg" alt="person">
-                    </figure>
+// Массив с URL изображениями
+const imageUrls = [
+  'path/to/image1.jpg',
+  'path/to/image2.jpg',
+  'path/to/image3.jpg'
+];
 
+// Массив с текстами
+const textArray = [
+  'Text 1',
+  'Text 2',
+  'Text 3'
+];
 
-                    <p>
-                        Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-                        totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, 
-                        explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, 
-                        qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, 
-                        sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam,
-                        quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum 
-                        iure reprehenderit, qui in ea voluptate velit esse
-                    </p>
-                </section>
+// Получаем случайное число для выбора изображения
+let randomImageIndex = getRandomIntInclusive(0, imageUrls.length - 1);
 
-                <section id="skills">
-                    <h1>Навыки</h1>
-                    <p>
-                        Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-                        totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, 
-                        explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, 
-                        qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, 
-                        sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam,
-                        quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum 
-                        iure reprehenderit, qui in ea voluptate velit esse
-                    </p>
-                    <div class="text-right">
-                         <a class="btn" href="skills.html">Подробнее</a>
-                    </div>
-                   
-                </section>
+// Получаем случайный текст
+let randomTextIndex = getRandomIntInclusive(0, textArray.length - 1);
 
-          
-            <section id="technologies">
-                <h1>Технологии</h1>
-                <p>
-                    S
-                </p>
-                <ul>
-                    
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>JavaScript</li>
-                    <li>Bootstrap</li>
-                </ul>
-                <div class="text-right">
-                         <a class="btn" href="technologies.html">Подробнее</a>
-                    </div>
-                   
-            </section>
-            </div>
-        </main>
+// Устанавливаем фоновое изображение
+document.getElementById('background-image').style.backgroundImage = `url(${imageUrls[randomImageIndex]})`;
 
-        <footer class="footer">
-            <div class="container">
-                &copy; Чумаков.С.С
-            </div>
+// Выводим случайный текст
+document.getElementById('random-text').textContent = textArray[randomTextIndex];
+</script>
 
-        </footer>
-    </body>
+</body>
 </html>
