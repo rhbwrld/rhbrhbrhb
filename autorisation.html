@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="vieport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<header> <!--Шапка сайта-->
+
+
+</header>
+
+<body>
+    <h2>Свяжитесь с нами</h2>
+    <form action="https://httbin.org/post" method="post">
+        <fieldset>
+            <p>
+                <label>
+                    Email
+                    <input id="text" name="text-field" placeholder="Введите свой тест" required>
+                </label>
+            </p>
+             
+        </fieldset>
+        <fieldset>
+            <legend>Откуда узнали о нас?</legend>
+            <label><input type="radio" name="radio">Реклама</label>
+            <label><input type="radio" name="radio">Посоветовали</label>
+
+        </fieldset>
+
+        <fieldset>
+            <legend>Тип обращения</legend>
+                <p>
+                    <select name="quantity"> <!--выбор из списка-->
+                        <option value="1">Помощь</option>
+                        <option value="2">Вопрос</option>
+                        <option value="3">Заказ</option>
+                    </select>
+                </p>
+        </fieldset>
+
+        <fieldset>
+            <legend>Текст с сообщением</legend>
+            <p>
+                <label for="Ваш адрем электронной почты">
+                    <input type="email" name="email">
+                </label>
+        <p>
+            <a href="index.html">Отправить</a>
+        </p>
+
+    </form>
+   
+
+</body>
